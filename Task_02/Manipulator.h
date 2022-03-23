@@ -25,5 +25,5 @@ public:
 
     friend void generate(Manipulator& m);
     friend void print_m(const Manipulator& m);
-    friend double get_distance(const Manipulator& m, const std::pair<double, double> p);
+    friend double get_distance(const Manipulator& m, const std::pair<double, double> &p);
 };

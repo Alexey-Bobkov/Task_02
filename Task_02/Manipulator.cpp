@@ -27,7 +27,7 @@ void print_m(const Manipulator& m)
 };
 
 // расчет расстояния до точки по теореме Пифагора без вычитания радиуса
-double get_distance(const Manipulator& m, const std::pair<double, double> p) 
+double get_distance(const Manipulator& m, const std::pair<double, double> &p) 
 {
     return sqrt(pow((m.m_x - p.first), 2) + pow((m.m_y - p.second), 2));
 };

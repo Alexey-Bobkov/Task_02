@@ -28,7 +28,7 @@ int main()
     optimal_way(first, second, point, v_motion);
     cout << endl;
 
-    for (auto& [X, Y, M] : v_motion)
+    for (const auto& [X, Y, M] : v_motion)
     {
         cout << setprecision(3) << M << "{" << X << ", " << Y << "} " << endl;
     }

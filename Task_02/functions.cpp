@@ -1,4 +1,4 @@
-п»ї#include "Manipulator.h"
+#include "Manipulator.h"
 
 double generate()
 {
@@ -39,8 +39,8 @@ void print_vec_points(const vector_pair& v)
     }
 }
 
-// РЅР°С…РѕР¶РґРµРЅРёРµ РѕРїС‚РёРјР°Р»СЊРЅРѕРіРѕ РјР°РЅРёРїСѓР»СЏС‚РѕСЂР° РґР»СЏ РєР°Р¶РґРѕР№ point(РєРѕРѕСЂРґРёС‚Р°С‚С‹ С‚РѕС‡РµРє) Рё РґРѕР±Р°РІР»РµРЅРёРµ 
-//РІ РІРµРєС‚РѕСЂ(std::vector<std::tuple<double, double, std::string>>) РѕРїС‚РёРјР°Р»СЊРЅРѕРіРѕ РјР°РЅРёРїСѓР»СЏС‚РѕСЂР°
+// нахождение оптимального манипулятора для каждой point(коордитаты точек) и добавление 
+//в вектор(std::vector<std::tuple<double, double, std::string>>) оптимального манипулятора
 void optimal_way(Manipulator& m1, Manipulator& m2, const vector_pair& point,
     vector_tuple& v)
 {
@@ -49,12 +49,12 @@ void optimal_way(Manipulator& m1, Manipulator& m2, const vector_pair& point,
         if (get_distance(m1, point[i]) < get_distance(m2, point[i]))
         {
             v.push_back(std::tuple<double, double, std::string>(point[i].first, point[i].second, "Manipulator 1"));
-            m1.change_center_point(point[i].first, point[i].second);// СЃРјРµРЅР° РєРѕРѕСЂРґРёРЅР°С‚ РїРѕСЃР»Рµ Сѓ РјР°РЅРёРїСѓР»СЏС‚РѕСЂР° РµСЃР»Рё Сѓ РЅРµРіРѕ РѕРїС‚РёРјР°Р»СЊРЅР°СЏ РґРёСЃС‚Р°РЅС†РёСЏ
+            m1.change_center_point(point[i].first, point[i].second);// смена координат после у манипулятора если у него оптимальная дистанция
         }
         else
         {
             v.push_back(std::tuple<double, double, std::string>(point[i].first, point[i].second, "Manipulator 2"));
-            m2.change_center_point(point[i].first, point[i].second);// СЃРјРµРЅР° РєРѕРѕСЂРґРёРЅР°С‚ РїРѕСЃР»Рµ Сѓ РјР°РЅРёРїСѓР»СЏС‚РѕСЂР° РµСЃР»Рё Сѓ РЅРµРіРѕ РѕРїС‚РёРјР°Р»СЊРЅР°СЏ РґРёСЃС‚Р°РЅС†РёСЏ
+            m2.change_center_point(point[i].first, point[i].second);// смена координат после у манипулятора если у него оптимальная дистанция
         }
     }
 }

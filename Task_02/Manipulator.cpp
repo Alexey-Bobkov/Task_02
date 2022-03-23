@@ -1,8 +1,8 @@
-#include "Manipulator.h"
+п»ї#include "Manipulator.h"
 
 void generate(Manipulator& m)  
 {
-    // рандомные значение double X и Y (от -100 до 100)
+    // СЂР°РЅРґРѕРјРЅС‹Рµ Р·РЅР°С‡РµРЅРёРµ double X Рё Y (РѕС‚ -100 РґРѕ 100)
     int MIN = -100;
     int MAX = 100;
 
@@ -13,7 +13,7 @@ void generate(Manipulator& m)
     m.m_x = distr(eng);
     m.m_y = distr(eng);
 
-    // рандомное значение double для радиуса (от 5 до 25)
+    // СЂР°РЅРґРѕРјРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ double РґР»СЏ СЂР°РґРёСѓСЃР° (РѕС‚ 5 РґРѕ 25)
     MIN = 5;
     MAX = 25;
     std::uniform_real_distribution<double> dis_radius(MIN, MAX);
@@ -26,7 +26,7 @@ void print_m(const Manipulator& m)
     std::cout << "X = " << m.m_x << " Y = " << m.m_y << " radius = " << m.m_radius << std::endl;
 };
 
-// расчет расстояния до точки по теореме Пифагора без вычитания радиуса
+// СЂР°СЃС‡РµС‚ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ РґРѕ С‚РѕС‡РєРё РїРѕ С‚РµРѕСЂРµРјРµ РџРёС„Р°РіРѕСЂР° Р±РµР· РІС‹С‡РёС‚Р°РЅРёСЏ СЂР°РґРёСѓСЃР°
 double get_distance(const Manipulator& m, const std::pair<double, double> &p) 
 {
     return sqrt(pow((m.m_x - p.first), 2) + pow((m.m_y - p.second), 2));
